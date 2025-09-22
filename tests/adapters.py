@@ -33,8 +33,10 @@ def get_flashattention_autograd_function_triton() -> Type:
         A class object (not an instance of the class)
     """
     # For example: return MyTritonFlashAttentionAutogradFunctionClass
-    raise NotImplementedError
-
+    # from cs336_systems import flash_attn_triton
+    # return flash_attn_triton.FlashAttention2InTriton
+    from cs336_systems import flash_attn
+    return flash_attn.FlashAttention2InPytorch
 
 def get_ddp_individual_parameters(module: torch.nn.Module) -> torch.nn.Module:
     """
